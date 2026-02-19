@@ -1,0 +1,110 @@
+{
+  "kind": "build_request",
+  "title": "Fix Upcycle and Recycle buttons with submission pop-ups",
+  "projectName": "EcoThread Connect",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-4",
+      "text": "Create a pop-up dialog component that opens when clicking the Resale, Upcycle, or Recycle buttons in MaterialGradeDashboard, replacing the current external link behavior",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "when clicking this button(resale, upcycle, recycle) there should open a pop-up"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking Resale button opens submission dialog",
+        "Clicking Upcycle button opens submission dialog",
+        "Clicking Recycle button opens submission dialog",
+        "Dialog can be closed without submitting"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add form fields in the submission pop-up for: clothing/dress type (text input or dropdown), number of pieces (numeric input), and display calculated credits earned based on the category and quantity",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "we can submit which type of clothes /dress we are giving and no. of cloth pieces. no. of credits we earn"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form includes clothing type input field",
+        "Form includes number of pieces numeric input",
+        "Credits earned are calculated and displayed in the dialog",
+        "Different credit rates apply for Resale, Upcycle, and Recycle categories"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Store clothing submissions in backend state with fields for submission type (resale/upcycle/recycle), clothing type, quantity, credits earned, and timestamp",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend method accepts submission data with type, clothing description, quantity, and credits",
+        "Submissions are persisted in stable storage",
+        "Method returns success/failure status"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Update GreenCreditWallet balance when submissions are successfully processed, adding the earned credits to the user's total",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Submitting clothing increases credit balance in GreenCreditWallet",
+        "Balance update is reflected immediately in the UI",
+        "Recent activity in GreenCreditWallet shows the new submission"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Maintain a simple, clean interface design consistent with the existing sage green and off-white color palette",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "plz keep the website simple"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Pop-up dialog uses existing color scheme from index.css",
+        "Form layout is clean and uncluttered",
+        "No unnecessary decorative elements added"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the existing MaterialGradeDashboard card layout or styling",
+    "Keep the current sage green and soft charcoal color palette defined in index.css",
+    "Maintain the simple, clean aesthetic of the existing design"
+  ],
+  "nonGoals": [
+    "User authentication or login system",
+    "Image upload for clothing items",
+    "Complex credit calculation formulas beyond basic quantity-based rates",
+    "External payment or marketplace integration",
+    "Admin dashboard or submission review workflow"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

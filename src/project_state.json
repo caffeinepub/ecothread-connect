@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A sustainable fashion marketplace website with clothing submission functionality through pop-ups for resale, upcycle, and recycle options",
+  "architectural_notes": [
+    "Simple, clean UI design philosophy",
+    "Modal/pop-up based submission workflow for clothing items",
+    "Credit system for tracking user contributions"
+  ],
+  "known_issues": [
+    "Upcycle and Recycle buttons not functioning (needs pop-up implementation)"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-pop-up-dialog-component-that-opens-when-clicking-the-resale-upcycle-or-recycle-buttons-in-materialgradedashboard-replacing-the-current-external-link-behavior",
+      "title": "Create a pop-up dialog component that opens when clicking the Resale, Upcycle, or Recycle buttons in MaterialGradeDashboard, replacing the current external link behavior",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-form-fields-in-the-submission-pop-up-for-clothing-dress-type-text-input-or-dropdown-number-of-pieces-numeric-input-and-display-calculated-credits-earned-based-on-the-category-and-quantity",
+      "title": "Add form fields in the submission pop-up for: clothing/dress type (text input or dropdown), number of pieces (numeric input), and display calculated credits earned based on the category and quantity",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-greencreditwallet-balance-when-submissions-are-successfully-processed-adding-the-earned-credits-to-the-user-s-total",
+      "title": "Update GreenCreditWallet balance when submissions are successfully processed, adding the earned credits to the user's total",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-maintain-a-simple-clean-interface-design-consistent-with-the-existing-sage-green-and-off-white-color-palette",
+      "title": "Maintain a simple, clean interface design consistent with the existing sage green and off-white color palette",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Pop-up forms for Resale, Upcycle, and Recycle buttons to submit clothing details (type, quantity) and display credits earned",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Store clothing submissions in backend state with fields for submission type (resale/upcycle/recycle), clothing type, quantity, credits earned, and timestamp",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "EcoThread Connect",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

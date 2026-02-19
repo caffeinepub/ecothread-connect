@@ -1,0 +1,12 @@
+{
+  "frontend/src/App.tsx": "Main application component that composes the landing page sections with section IDs for navigation and includes the Toaster component for notifications.",
+  "frontend/src/components/HeroSection.tsx": "Hero section component with a CTA button that scrolls to the material guide section when clicked, featuring split-screen background layout with EcoThread Connect branding.",
+  "frontend/src/components/MaterialGradeDashboard.tsx": "Material Grade dashboard component displaying three clickable categories (Resale, Upcycle, Recycle) that open the submission dialog instead of external links, maintaining the existing card layout and styling.",
+  "frontend/src/components/GreenCreditWallet.tsx": "Green Credit wallet interface displaying real-time balance and submissions from the backend with loading states, showing recent activity with submission details and functional redeem buttons.",
+  "frontend/src/components/ScrapMap.tsx": "Scrap Map component with clickable location pins and cards, functional direction and call buttons, and interactive location selection with smooth scrolling.",
+  "frontend/src/components/Footer.tsx": "Footer component with functional navigation links that scroll to sections, working social media links that open in new tabs, and proper attribution with UTM tracking.",
+  "frontend/src/index.css": "Global styles defining the OKLCH color system with sage green, soft charcoal, and off-white palette for both light and dark modes, plus typography settings.",
+  "frontend/tailwind.config.js": "Tailwind configuration customized with Inter font family, extended color tokens matching the sage green aesthetic, and custom border radius and animation settings.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching green credit balance and submissions from the backend, plus a mutation hook for submitting clothing items with automatic cache invalidation and toast notifications.",
+  "frontend/src/components/SubmissionDialog.tsx": "Reusable dialog component for submitting clothing items with form fields for clothing type (dropdown), quantity (numeric input), and calculated credits display based on submission type (resale/upcycle/recycle)."
+}

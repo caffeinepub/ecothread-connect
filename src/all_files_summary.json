@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Motoko actor implementing a green credit system for clothing submissions (resale, upcycle, recycle) with credit calculation, submission tracking, and balance management using a Map-based storage structure.",
+  "backend/migration.mo": "Migration module that initializes the actor state with empty submissions map, zero submission ID counter, and zero green credit balance for fresh deployments.",
+  "feature_evidence.json": "Feature evidence report documenting four implemented features: submission dialog component, form fields with credit calculation, wallet balance updates, and consistent UI design with sage green palette.",
+  "frontend-file-summaries.txt": "JSON-formatted summaries of frontend files including App, components (HeroSection, MaterialGradeDashboard, GreenCreditWallet, ScrapMap, Footer, SubmissionDialog), styling, and React Query hooks for backend integration.",
+  "frontend/index.css": "Global Tailwind CSS configuration defining OKLCH color system with sage green, soft charcoal, and off-white palette for light and dark modes, plus custom CSS variables for UI components.",
+  "frontend/index.html": "HTML entry point for the EcoThread Connect application with root div and module script reference to main.tsx.",
+  "frontend/src/App.tsx": "Main React application component composing HeroSection, MaterialGradeDashboard, GreenCreditWallet, ScrapMap, Footer with section IDs for navigation and Toaster for notifications.",
+  "frontend/src/components/Footer.tsx": "Footer component with brand identity, quick links with smooth scroll navigation, resources section, social media icons linking to external platforms, and UTM-tracked attribution to Lovable.dev.",
+  "frontend/src/components/GreenCreditWallet.tsx": "Wallet interface displaying real-time green credit balance and recent submissions from backend using React Query hooks, with progress tracking, reward redemption buttons, and loading states.",
+  "frontend/src/components/HeroSection.tsx": "Hero section component with split-screen background images (denim/recycled materials), brand logo, tagline, CTA button that scrolls to material guide, and stats display showing items recycled, active users, and partner locations.",
+  "frontend/src/components/MaterialGradeDashboard.tsx": "Material grading dashboard displaying three categories (Resale, Upcycle, Recycle) as clickable cards with criteria, examples, and icons; opens SubmissionDialog when a category is clicked.",
+  "frontend/src/components/ScrapMap.tsx": "Interactive map section showing local textile recycling drop-off locations with pins, location cards displaying address/hours/services, and buttons for directions and phone calls.",
+  "frontend/src/components/SubmissionDialog.tsx": "Modal dialog for submitting clothing items with form inputs for clothing type and quantity, displays calculated green credits based on submission type, and calls useSubmitClothing mutation on submit.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that creates and manages the backend actor instance based on Internet Identity authentication state, invalidating dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context provider and hook for Internet Identity authentication, managing login/logout flow, identity state, and AuthClient lifecycle with configurable options.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for fetching green credit balance and submissions, plus a mutation hook for submitting clothing that invalidates queries and shows toast notifications on success/error.",
+  "frontend/src/index.css": "Tailwind CSS configuration with custom CSS variables defining a sage green, soft charcoal, and off-white color palette for both light and dark modes, including sidebar, chart, and UI component colors.",
+  "frontend/src/main.tsx": "React application entry point that sets up the root component with QueryClient for data fetching and InternetIdentityProvider for authentication context.",
+  "frontend/tailwind.config.js": "Tailwind configuration file that extends the default theme with custom colors using OKLCH color space, custom font families, border radius variables, and animation keyframes for accordion components.",
+  "project_state.json": "Project metadata tracking EcoThread Connect's sustainable fashion marketplace features, including pending implementation of pop-up submission forms for resale/upcycle/recycle functionality and credit system integration."
+}

@@ -1,0 +1,80 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-pop-up-dialog-component-that-opens-when-clicking-the-resale-upcycle-or-recycle-buttons-in-materialgradedashboard-replacing-the-current-external-link-behavior",
+      "featureTitle": "Create a pop-up dialog component that opens when clicking the Resale, Upcycle, or Recycle buttons in MaterialGradeDashboard, replacing the current external link behavior",
+      "files": [
+        "frontend/src/components/MaterialGradeDashboard.tsx",
+        "frontend/src/components/SubmissionDialog.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-form-fields-in-the-submission-pop-up-for-clothing-dress-type-text-input-or-dropdown-number-of-pieces-numeric-input-and-display-calculated-credits-earned-based-on-the-category-and-quantity",
+      "featureTitle": "Add form fields in the submission pop-up for: clothing/dress type (text input or dropdown), number of pieces (numeric input), and display calculated credits earned based on the category and quantity",
+      "files": [
+        "frontend/src/components/SubmissionDialog.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-greencreditwallet-balance-when-submissions-are-successfully-processed-adding-the-earned-credits-to-the-user-s-total",
+      "featureTitle": "Update GreenCreditWallet balance when submissions are successfully processed, adding the earned credits to the user's total",
+      "files": [
+        "frontend/src/components/GreenCreditWallet.tsx",
+        "frontend/src/components/SubmissionDialog.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-maintain-a-simple-clean-interface-design-consistent-with-the-existing-sage-green-and-off-white-color-palette",
+      "featureTitle": "Maintain a simple, clean interface design consistent with the existing sage green and off-white color palette",
+      "files": [
+        "frontend/src/components/SubmissionDialog.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix Upcycle and Recycle buttons with submission pop-ups",
+  "requirements": [
+    {
+      "id": "REQ-4",
+      "summary": "Create a pop-up dialog component that opens when clicking the Resale, Upcycle, or Recycle buttons in MaterialGradeDashboard, replacing the current external link behavior",
+      "acceptanceCriteria": [
+        "Clicking Resale button opens submission dialog",
+        "Clicking Upcycle button opens submission dialog",
+        "Clicking Recycle button opens submission dialog",
+        "Dialog can be closed without submitting"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SubmissionDialog.tsx",
+          "operation": "create",
+          "description": "Create a reusable dialog component that accepts submission type (resale/upcycle/recycle) as a prop and renders a form for clothing submission. Use shadcn/ui Dialog component from the build-template-react component. Include close functionality and form state management."
+        },
+        {
+          "path": "frontend/src/components/MaterialGradeDashboard.tsx",
+          "operation": "modify",
+          "description": "Replace the external link behavior of the Resale, Upcycle, and Recycle buttons with onClick handlers that open the SubmissionDialog component with the appropriate submission type. Remove the href attributes and add state management for dialog visibility. Preserve the existing card layout and styling as required by constraints."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add form fields in the submission pop-up for: clothing/dress type (text input or dropdown), number of pieces (numeric input), and display calculated credits earned based on the category and quantity",
+      "acceptanceCriteria": [
+        "Form includes clothing type input field",
+        "Form includes number of pieces numeric input",
+        "Credits earned are calculated and displayed in the dialog",
+        "Different credit rates apply for Resale, Upcycle, and Recycle categories"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SubmissionDialog.tsx",
+          "operation": "modify",
+          "description": "Add form fields for clothing type (dropdown using shadcn/ui Select component with options: shirt, pants, dress, jacket, accessory) and quantity (numeric input using shadcn/ui Input component). Implement credit calculation logic that applies different rates based on submission type (resale/upcycle/recycle) and quantity. Display the calculated credits earned prominently in the dialog. Use controlled form inputs with React state."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Update GreenCreditWallet balance when submissions are successfully processed, adding the earned credits to the user's total",
+      "acceptanceCriteria": [
+        "Submitting clothing increases credit balance in GreenCreditWallet",
+        "Balance update is reflected immediately in the UI",
+        "Recent activity in GreenCreditWallet shows the new submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add React Query hooks for fetching green credit balance (useGreenCreditBalance) and submissions list (useSubmissions). Also add a mutation hook (useSubmitClothing) that calls the backend submitClothing method and invalidates the balance and submissions queries on success. Use the useActor hook to get the backend actor instance."
+        },
+        {
+          "path": "frontend/src/components/SubmissionDialog.tsx",
+          "operation": "modify",
+          "description": "Integrate the useSubmitClothing mutation hook from useQueries.ts. On form submission, call the mutation with the selected clothing type, quantity, and submission type. Handle loading states, show success toast using the existing Toaster component, and close the dialog on successful submission. Handle errors with error toast notifications."
+        },
+        {
+          "path": "frontend/src/components/GreenCreditWallet.tsx",
+          "operation": "modify",
+          "description": "Replace the hardcoded balance (1247) with data from the useGreenCreditBalance query hook. Update the recent activity list to display real submissions from the useSubmissions query hook, showing submission type, clothing type, quantity, credits earned, and timestamp. Maintain the existing UI layout and styling. Show loading state while queries are fetching."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Maintain a simple, clean interface design consistent with the existing sage green and off-white color palette",
+      "acceptanceCriteria": [
+        "Pop-up dialog uses existing color scheme from index.css",
+        "Form layout is clean and uncluttered",
+        "No unnecessary decorative elements added"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SubmissionDialog.tsx",
+          "operation": "modify",
+          "description": "Apply Tailwind CSS classes using the existing color variables from frontend/src/index.css and frontend/tailwind.config.js. Use the sage green palette for primary actions and soft charcoal for text. Keep the form layout minimal with appropriate spacing between fields. Ensure the dialog follows the clean aesthetic established in the existing components."
+        }
+      ]
+    }
+  ]
+}
